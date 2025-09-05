@@ -1,27 +1,36 @@
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: Arial, sans-serif;
-  background: aliceblue;
-  margin: 0;
-  padding: 20px;
-  transition: background 0.3s, color 0.3s;
+  background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .container {
-  max-width: 450px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 350px;
+  max-width: 100%;
+  text-align: center;
+  transition: 0.3s;
 }
 
 h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #0077b6;
 }
+
 
 .todo-list {
   list-style: none;
@@ -29,75 +38,65 @@ h1 {
 }
 
 .todo-list li {
-  margin-bottom: 15px;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  background: #f0f4ff;
-  padding: 10px;
+  background: #f8f9fa;
+  padding: 0.8rem 1rem;
+  margin: 0.5rem 0;
   border-radius: 8px;
-  transition: background 0.3s;
+  text-align: left;
+  transition: 0.3s;
+  cursor: pointer;
 }
+
 
 .todo-list li:hover {
-  background: #e0e8ff;
+  background: #e3f2fd;
+  transform: translateX(5px);
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.2);
-  cursor: pointer;
-}
-
-input[type="submit"] {
-  width: 100%;
-  padding: 12px;
-  background: #4a90e2;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-input[type="submit"]:hover {
-  background: #357abd;
-}
-/* =======================
-   Responsive Media Queries
-======================= */
 @media (max-width: 600px) {
+  body {
+    background: linear-gradient(135deg, #fff7e6, #ffe6cc); 
+  }
+
   .container {
-    padding: 15px;
+    width: 100%;
+    padding: 1rem;
   }
 
   h1 {
-    font-size: 22px;
+    font-size: 1.4rem;
   }
 
   .todo-list li {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  input[type="submit"] {
-    font-size: 14px;
-    padding: 10px;
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
   }
 }
 
-@media (max-width: 400px) {
+
+@media (max-width: 900px) {
+  body {
+    background: linear-gradient(135deg, #e6ffe6, #ccffcc);
+  }
+
+  .container {
+    width: 80%;
+  }
+
   h1 {
-    font-size: 18px;
+    font-size: 1.6rem;
   }
 
   .todo-list li {
-    flex-direction: column;
-    align-items: flex-start;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 901px) {
+  body {
+    background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
   }
 
-  input[type="checkbox"] {
-    margin-bottom: 6px;
+  .container {
+    width: 350px;
   }
 }
